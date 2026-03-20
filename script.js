@@ -1,30 +1,32 @@
-let votos = 0
+let votos = 0;
 
-const boton = document.getElementById("votar")
-const textoVotos = document.getElementById("contador")
+const boton = document.getElementById("votar");
+const textoVotos = document.getElementById("contador");
 
-boton.addEventListener("click", function(){
+boton.addEventListener("click", function () {
+    votos = votos + 1;
+    textoVotos.innerText = "Votos: " + votos;
+    console.log("voto registrado");
+});
 
-votos = votos + 1
+const form = document.getElementById("formPropuesta");
+const mensaje = document.getElementById("mensaje");
 
-textoVotos.innerText = "Votos: " + votos
+form.addEventListener("submit", function (e) {
+    e.preventDefault(); // evita que se recargue la página
 
-console.log("voto registrado")
+    let nombre = document.getElementById("nombre").value.trim();
+    let idea = document.getElementById("idea").value.trim();
 
-})
+    // Validación correcta
+    if (nombre === "" || idea === "") {
+        mensaje.innerText = "⚠️ Completa todos los campos";
+        mensaje.style.color = "red";
+    } else {
+        mensaje.innerText = "✅ Propuesta enviada correctamente";
+        mensaje.style.color = "green";
 
-
-const form = document.getElementById("formPropuesta")
-
-form.addEventListener("submit", function(e){
-
-let nombre = document.getElementById("nombre").value
-let idea = document.getElementById("idea").value
-
-if(nombre = "" || idea == ""){
-
-document.getElementById("mensaje").innerText = "Completa todos los campos"
-
-}
-
-})
+        // Opcional: limpiar inputs
+        form.reset();
+    }
+});
