@@ -9,55 +9,60 @@
 <body>
 
 <header class="navbar">
+    <h2>Ideas Último Año</h2>
 
-<h2>Ideas Último Año</h2>
-
-<nav>
-<a href="#">Inicio</a>
-<a href="#">Propuestas</a>
-<a href="#">Contacto</a>
-</nav>
-
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Propuestas</a>
+        <a href="#">Contacto</a>
+    </nav>
 </header>
 
+<main>
 
-<section class="hero">
+    <section class="hero">
+        <h1>Propuestas para el último año</h1>
+        <p>Votá ideas para hacer este último año inolvidable.</p>
 
-<h1>Propuestas para el último año</h1>
-<p>Votá ideas para hacer este último año inolvidable.</p>
+        <button id="votar">Apoyar esta idea</button>
 
-<button id="votar">Apoyar esta idea</button>
+        <p id="contador">Votos: 0</p>
+    </section>
 
-<p id="contador">Votos: 0</p>
+    <!-- Nueva sección -->
+    <section class="destacadas">
+        <h2>Ideas destacadas</h2>
+        <article>
+            <h3>Viaje de egresados</h3>
+            <p>Organizar un viaje inolvidable con todo el curso.</p>
+        </article>
 
-</section>
+        <article>
+            <h3>Fiesta de despedida</h3>
+            <p>Realizar una gran fiesta para cerrar el año.</p>
+        </article>
+    </section>
 
+    <section class="propuesta">
+        <h2>Enviar una propuesta</h2>
 
-<section class="propuesta">
+        <form id="formPropuesta">
+            <label for="nombre">Tu nombre</label>
+            <input type="text" id="nombre">
 
-<h2>Enviar una propuesta</h2>
+            <label for="idea">Tu propuesta</label>
+            <input type="text" id="idea">
 
-<form id="formPropuesta">
+            <button type="submit">Enviar propuesta</button>
 
-<label>Tu nombre</label>
-<input type="text" id="nombre">
+            <p id="mensaje"></p>
+        </form>
+    </section>
 
-<label>Tu propuesta</label>
-<input type="text" id="idea">
-
-<button>Enviar propuesta</button>
-
-<p id="mensaje"></p>
-
-</form>
-
-</section>
-
+</main>
 
 <footer>
-
-<p>Promoción 2026</p>
-
+    <p>Promoción 2026</p>
 </footer>
 
 <script src="script.js"></script>
